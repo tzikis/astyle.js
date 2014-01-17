@@ -8,7 +8,7 @@ Usage
 
 Include the javacsript file:
 
-```
+```html
 <script src="path/to/astyle.js"></script>
 ```
 
