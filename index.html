@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ACE in Action</title>
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+
+<div id="editor">	#include &lt;stdio.h&gt;
+	int main(void){
+	 printf("hello");
+	printf("hello");
+	      printf("hello");
+
+	}</div>
+
+<button onclick="autoformat();">Beautify</button>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="astyle.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/c_cpp");
+
+</script>
+<script>
+function autoformat()
+{
+	alert("waiting for the javascript to load");
+}
+
+$(document).ready(function (){
+	js_format_string = Module.cwrap('js_format_string', 'string', ['string']);
+	
+	autoformat = function()
+	{
+		editor.getSession().setValue(js_format_string(editor.getSession().getValue()));
+	}
+});
+</script>
+</body>
+</html>
