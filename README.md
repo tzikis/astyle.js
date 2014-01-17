@@ -40,3 +40,5 @@ int main(void)
 ```
 
 Note that, right now, it's hardcoded to use hard tabs, and one indentation style (you know, the right one! :P).
+
+## [Demo](http://tzikis.github.io/astyle.js/)
